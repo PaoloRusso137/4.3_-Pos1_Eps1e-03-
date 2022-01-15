@@ -25,7 +25,7 @@ class GeoLocalizationNet(nn.Module):
 
 
 
-def gem(x, p=5, eps=5e-7):
+def gem(x, p=1, eps=1e-3):
     return F.avg_pool2d(x.clamp(min=eps).pow(p), (x.size(-2), x.size(-1))).pow(1./p)
 
 class GeM(nn.Module):
